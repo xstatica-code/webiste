@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title> 
+        How to modify URL without reloading 
+        the page using JavaScript? 
+    </title> 
+</head> 
+  
+<body> 
+    <h1 style="color: green"> 
+        GeeksForGeeks 
+    </h1> 
+      
+    <b> 
+        How to modify URL without reloading 
+        the page using JavaScript? 
+    </b> 
+      
+    <p> 
+        Click on the button below to modify 
+        the current history state 
+    </p> 
+      
+ 
+    <script> 
+/*
+try {
+  console.log(decodeURI(encoded));
+  // expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // catches a malformed URI
+  console.error(e);
+}
+*/
+const myurl = new URL ('https://promotion.exness.com/pt/cam1912_investment/?utm_source=google&utm_medium=display&utm_term=%7Bkeyword%7D&partner_id=632');
+
+var source = myurl.searchParams.get('utm_source');
+var medium = myurl.searchParams.get('utm_medium');
+var medium = myurl.searchParams.get('utm_medium');
+
+if (source == null ) {
+    console.log("was null");
+  source='organic';
+    }
+    else {
+     console.log("not null");
+    }
+myurl.searchParams.set('utm_source', source);
+
+    // foo could get resolved and it's defined
+
+
+//const tempmyurl = new URL(window.location.href);
+//const newurl = new URL('testing', myurl.protocol);
+//const newurl2 = new URL('monkey', myurl);
+//const myutm_source = new URL(window.location.href)
+//const myurl2 = new URL('https://www.google.com/?utm_source=google');
+
+
+
+//console.log(myurl.searchParams.get('thisisatest'));
+//console.log(myurl.searchParams.get('utm_source'));
+//console.log(myurl.searchParams.get('utm_medium'));
+//console.log(myurl);
+
+console.log(myurl.protocol); // https:
+console.log(myurl.host);     // attacomsian.com
+console.log(myurl.pathname); // /blog/javascript-url-object
+console.log(myurl.hash);     // #url-properties
+console.log(myurl.origin);   // https://attacomsian.com
+console.log(myurl.searchParams);   // https://attacomsian.com
+
+
+
+console.log('here is new url---  '+ myurl);
+
+console.log('here is new url---  '+ source);
+//alert('here is new url---'+newurl);
+    </script> 
+
+       <button> 
+        <script>
+      // var loc = myurl ;
+       document.write('<a href="' + myurl + '">Google</a>'); 
+          //  document.write('<a href="' + loc + '">Google</a>'); 
+      </script>
+    </button> 
+      
+</body> 
+  
+</html> 
